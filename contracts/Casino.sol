@@ -56,14 +56,8 @@ contract Casino {
    // Generates a number between 1 and 10 that will be the winner
    function generateNumberWinner() public onEndGame {
       
-	 //   uint8 randomNumber = numbers[0];
-     //   for (uint8 i = 1; i < numbers.length; ++i) {
-     //      randomNumber ^= numbers[i];
-     //   }
-	  numberWinner = 5;
-	  //uint256 numberGenerated = block.number % 10 + 1; // This isn't secure
-     // distributePrizes((randomNumber%10));
-	 distributePrizes();
+      numberWinner = block.number % 10 + 1; // This isn't secure
+      distributePrizes();
    }
    
    // Sends the corresponding ether to each winner depending on the total bets
